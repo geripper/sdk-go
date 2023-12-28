@@ -7,6 +7,6 @@ type Config struct {
 }
 
 type TextData struct {
-	Key  string `json:"key"`
-	Node []uint `json:"node"`
+	Keys []string `json:"keys"`
+	Node []uint   `json:"node"`
 }

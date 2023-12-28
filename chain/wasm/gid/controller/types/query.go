@@ -86,3 +86,16 @@ type QueryNamePreview struct {
 	IsValidName bool `json:"is_valid_name"`
 	IsReserved  bool `json:"is_reserved"`
 }
+
+type QueryGetPaymentChan struct {
+	Query SenderPubkeyHash `json:"payment_chan"`
+}
+
+type SenderPubkeyHash struct {
+	SenderPubkeyHash    string `json:"sender_pubkey_hash,omitempty"`
+	RecipientPubkeyHash string `json:"recipient_pubkey_hash,omitempty"`
+}
+
+type QueryGetStaked struct {
+	Query Address `json:"staked"`
+}

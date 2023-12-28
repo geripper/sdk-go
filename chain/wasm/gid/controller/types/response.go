@@ -59,3 +59,23 @@ type RegistrarResponse struct {
 type RentPriceResponse struct {
 	Price sdk.Uint `json:"price"`
 }
+
+type PaymentChanResponse struct {
+	Id             uint32 `json:"id"`
+	MaxAmount      string `json:"max_amount"`
+	WithdrawlSeq   uint64 `json:"withdrawl_seq"`
+	FaceValue      string `json:"face_value"`
+	AutoRelease    uint64 `json:"auto_release"`
+	ApproveSigners string `json:"approve_signers"`
+}
+
+type StakedResponse struct {
+	Denom map[string]string `json:"denom"`
+	Stake StakeData         `json:"stake"`
+}
+
+type StakeData struct {
+	Amount   string `json:"amount"`
+	Metadata []uint `json:"metadata"`
+	Status   string `json:"status"`
+}

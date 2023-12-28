@@ -14,7 +14,7 @@ func NewMsgSetAddress(address string, coinType uint64, node []uint) MsgSetAddres
 	}
 }
 
-func NewMsgSetTextData(key string, node []uint, value string) MsgSetTextData {
+func NewMsgSetTextData(key []string, node []uint, value string) MsgSetTextData {
 	return MsgSetTextData{
 		Msg: SetTextData{
 			Key:   key,

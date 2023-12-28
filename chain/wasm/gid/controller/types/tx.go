@@ -5,8 +5,7 @@ import (
 )
 
 type Commit struct {
-	Commitment  string    `json:"commitment"`
-	Commitments *[]string `json:"commitments,omitempty"`
+	Commitments []string `json:"commitments,omitempty"`
 }
 
 type MsgCommit struct {
@@ -117,4 +116,24 @@ type MsgReverseClaim struct {
 
 type MsgNamePreview struct {
 	Msg Name `json:"name_preview"`
+}
+
+type ClosePaymentChan struct {
+	ChanKey    string `json:"chan_key"`
+	Commitment []byte `json:"commitment,omitempty"`
+}
+
+type PaymentChannels struct {
+}
+
+type MsgCashing struct {
+	RecipientKey string     `json:"recipient_key"`
+	Cheques      MsgCheques `json:"cheques"`
+}
+
+type MsgCheques struct {
+	ChanId       uint32 `json:"chan_id"`
+	SenderKey    string `json:"sender_key"`
+	RecipientKey string `json:"recipient_key"`
+	Seq          uint64 `json:"seq"`
 }

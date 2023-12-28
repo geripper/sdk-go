@@ -14,7 +14,7 @@ type QueryGetAddress struct {
 }
 
 type QueryGetTextData struct {
-	Query TextData `json:"get_text_data"`
+	Query TextData `json:"get_text_datas"`
 }
 
 type GetAllTextData struct {
@@ -24,7 +24,7 @@ type GetAllTextData struct {
 }
 
 type QueryGetAllTextData struct {
-	Query GetAllTextData `json:"get_all_text_data"`
+	Query GetAllTextData `json:"get_keys"`
 }
 
 type GetContentHash struct {

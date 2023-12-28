@@ -4,10 +4,10 @@ import (
 	wasmtypes "github.com/gotabit/sdk-go/chain/wasm/types"
 )
 
-func NewMsgCommit(commitment string) MsgCommit {
+func NewMsgCommit(commitments []string) MsgCommit {
 	return MsgCommit{
 		Msg: Commit{
-			Commitment: commitment,
+			Commitments: commitments,
 		},
 	}
 }

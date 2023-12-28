@@ -71,7 +71,7 @@ func main() {
 	fmt.Println("nodehash:", nodehash)
 
 	// prepare tx msg
-	setTextDataMsg := resolvertypes.NewMsgSetTextData("name", nodehash.Node, "alice001")
+	setTextDataMsg := resolvertypes.NewMsgSetTextData([]string{"name"}, nodehash.Node, "alice001")
 	bz, err := json.Marshal(setTextDataMsg)
 	if err != nil {
 		panic(err)
