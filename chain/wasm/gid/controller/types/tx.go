@@ -118,21 +118,29 @@ type MsgNamePreview struct {
 	Msg Name `json:"name_preview"`
 }
 
-type ClosePaymentChan struct {
-	ChanKey    string `json:"chan_key"`
-	Commitment []byte `json:"commitment,omitempty"`
-}
-
 type PaymentChannels struct {
 }
 
-type MsgCashing struct {
-	RecipientKey string     `json:"recipient_key"`
-	Cheques      MsgCheques `json:"cheques"`
+type MsgPaymentCashing struct {
+	Msg PaymentCashing `json:"cashing"`
+}
+
+type PaymentCashing struct {
+	RecipientKey string            `json:"recipient_key"`
+	Cheques      []*PaymentCheques `json:"cheques"`
+	Cheque       *PaymentCheques   `json:"cheque"`
+}
+
+type PaymentCheques struct {
+	SenderKey           string `json:"sender_key"`
+	SenderCommitment    []uint `json:"sender_commitment"`
+	RecipientKey        string `json:"recipient_key"`
+	RecipientCommitment []uint `json:"recipient_commitment"`
+	Nonce               uint64 `json:"nonce"`
 }
 
 type MsgCheques struct {
-	ChanId       uint32 `json:"chan_id"`
+	ChanId       int64  `json:"chan_id"`
 	SenderKey    string `json:"sender_key"`
 	RecipientKey string `json:"recipient_key"`
 	Seq          uint64 `json:"seq"`
