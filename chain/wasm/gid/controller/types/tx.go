@@ -128,15 +128,17 @@ type MsgPaymentCashing struct {
 type PaymentCashing struct {
 	RecipientKey string            `json:"recipient_key"`
 	Cheques      []*PaymentCheques `json:"cheques"`
-	Cheque       *PaymentCheques   `json:"cheque"`
 }
 
 type PaymentCheques struct {
-	SenderKey           string `json:"sender_key"`
-	SenderCommitment    []uint `json:"sender_commitment"`
-	RecipientKey        string `json:"recipient_key"`
+	Cheque MsgCheques `json:"cheque"`
+	//SenderKey           string `json:"sender_key"`
 	RecipientCommitment []uint `json:"recipient_commitment"`
-	Nonce               uint64 `json:"nonce"`
+	SenderCommitment    []uint `json:"sender_commitment"`
+	//RecipientKey        string `json:"recipient_key"`
+
+	//Nonce               uint64 `json:"nonce"`
+
 }
 
 type MsgCheques struct {
